@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "title": "1984",
+        "author": "George Orwell",
+        "genre": "Dystopian",
+        "description": "A novel about a dystopian future where society is under constant surveillance by an authoritarian regime.",
+        "yearOfPublication": 1949,
+        "rating": 4.7
+    },
+    {
+        "id": 2,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "genre": "Historical Fiction",
+        "description": "A story of racial injustice and the destruction of innocence, set in a small Southern town.",
+        "yearOfPublication": 1960,
+        "rating": 4.8
+    },
+    {
+        "id": 3,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "genre": "Classic",
+        "description": "A novel about the American Dream and the roaring 1920s, centered around the mysterious millionaire Jay Gatsby.",
+        "yearOfPublication": 1925,
+        "rating": 4.4
+    },
+    {
+        "id": 4,
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "genre": "Romance",
+        "description": "A classic novel of manners, following the romantic entanglements of the Bennet sisters.",
+        "yearOfPublication": 1813,
+        "rating": 4.6
+    },
+    {
+        "id": 5,
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "genre": "Fantasy",
+        "description": "An epic fantasy trilogy about the quest to destroy a powerful ring that threatens the world.",
+        "yearOfPublication": 1954,
+        "rating": 4.9
+    },
+    {
+        "id": 6,
+        "title": "Harry Potter and the Philosopher's Stone",
+        "author": "J.K. Rowling",
+        "genre": "Fantasy",
+        "description": "The first book in the Harry Potter series, introducing the world of wizards and the young wizard Harry Potter.",
+        "yearOfPublication": 1997,
+        "rating": 4.8
+    },
+    {
+        "id": 7,
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "genre": "Literary Fiction",
+        "description": "A novel about a teenager's disillusionment with the adult world, narrated by the iconic character Holden Caulfield.",
+        "yearOfPublication": 1951,
+        "rating": 4.3
+    },
+    {
+        "id": 8,
+        "title": "The Chronicles of Narnia",
+        "author": "C.S. Lewis",
+        "genre": "Fantasy",
+        "description": "A series of seven fantasy novels set in the magical land of Narnia.",
+        "yearOfPublication": 1950,
+        "rating": 4.7
+    },
+    {
+        "id": 9,
+        "title": "Brave New World",
+        "author": "Aldous Huxley",
+        "genre": "Dystopian",
+        "description": "A dystopian novel that explores the dangers of state control over new and powerful technologies.",
+        "yearOfPublication": 1932,
+        "rating": 4.5
+    },
+    {
+        "id": 10,
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "genre": "Fantasy",
+        "description": "A prelude to 'The Lord of the Rings', this novel follows the journey of Bilbo Baggins, a hobbit who finds a powerful ring.",
+        "yearOfPublication": 1937,
+        "rating": 4.7
+    }
+]
