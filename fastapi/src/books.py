@@ -28,12 +28,12 @@ class Book:
 
 class BookRequest(BaseModel):
     # model_config = ConfigDict(populate_by_name=True, alias_generator=to_camel)
-    isbn: int = Field(validation_alias="ISBN", serialization_alias="ISBN")
+    isbn: str = Field(validation_alias="isbn", serialization_alias="ISBN")
     title: str
     author: str
     genre: str
     description: str
-    year_of_publication: int
+    year_of_publication: int = Field(alias="yearOfPublication")
     rating: float = Field(ge=0, le=5)
 
     class Config:
@@ -44,11 +44,16 @@ class BookRequest(BaseModel):
                 "author": "J.R.R Tolkien",
                 "genre": "Fantasy",
                 "description": "The Hobbit, or There and Back Again is a children's fantasy novel by English author J. R. R. Tolkien.",
-                "year_of_publication": 1937,
+                "yearOfPublication": 1937,
                 "rating": 4.8,
             }
         }
 
+def delete_book(isbn: str, books: list[dict]) -> None:
+    for book_dict in books:
+        if book_dict["isbn"] == isbn:
+            print(f'found book: {book_dict["isbn"]}')
+            books.remove(book_dict)
 
 if __name__ == "__main__":
     import json
@@ -56,6 +61,8 @@ if __name__ == "__main__":
 
     with open("../files/books.json", "r") as f:
         books = json.load(f)
+    print(f'Number of books: {len(books)}')
     random_book = BookRequest.model_validate(random.choice(books))
-
-    print(random_book.model_dump(by_alias=True))
+    print(random_book.isbn)
+    delete_book(random_book.isbn, books)
+    print(f'Number of books: {len(books)}')
