@@ -3,7 +3,7 @@ from pydantic import ValidationInfo
 from pydantic import field_validator
 from datetime import datetime
 from dateutil.parser import parse as parse_date
-
+from typing import Any
 
 class Event(BaseModel):
     event_id: int | None = None
@@ -14,6 +14,7 @@ class Event(BaseModel):
     location: str | None = None
     max_participants: int = Field(default=3)
     participants: list[str] = Field(default_factory=list)
+    details: dict[str, Any] | None = None
 
     @field_validator("start_date", "end_date", mode="before")
     @classmethod
@@ -39,6 +40,14 @@ class Event(BaseModel):
                 raise ValueError("Too many participants")
         return value
 
+    @field_validator("details", mode="before")
+    @classmethod
+    def check_details(cls, value: dict[str, Any]) -> dict[str, Any]:
+        print(f'Validating details [Before]: {value}')
+        key_set = value.keys()
+        if key_set == {'theme', 'is_virtual'}:
+            return value
+        raise ValueError("Details must contain theme and is_virtual")
 
 if __name__ == "__main__":
     try:
@@ -47,6 +56,7 @@ if __name__ == "__main__":
             end_date="Feb 7th 2021 11 am",
             max_participants=4,
             participants=["John", "Jane", "Bob"],
+            details={"theme": "HR Fun activity", "is_virtual": False}
         )
         print(m.model_dump())
     except ValidationError as ex:
